@@ -263,7 +263,7 @@ const auth = getAuth();
                         // Check if the role is USER                     
                         if (userData.Role === "STUDENT") {
                             await signOut(auth);
-                            window.location.href = '/login.html';
+                            window.location.href = '/';
                         } else {
                             console.error("User does not have a USER role.");
                         }
