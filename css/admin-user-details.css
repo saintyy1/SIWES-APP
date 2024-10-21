@@ -189,13 +189,6 @@ span {
 }
 
 /* User Task Summary */
-.task-content {
-    width: 800px;
-    margin-inline: auto;
-    padding-bottom: 5rem;
-    padding-top: 2.5rem;
-}
-
 .hidden {
     display: none;
 }
@@ -204,14 +197,10 @@ span {
     float: right;
     margin-bottom: 0.5rem;
     background: none;
-    border-radius: 20px;
-    font-size: 15px;
+    border: none;
+    font-size: 20px;
     cursor: pointer;
     color: black; 
-}
-
-.approval-button {
-    float: right;
 }
 
 .approve-icon {
@@ -228,12 +217,13 @@ span {
     position: fixed;
     background-color: white;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     transition: transform 0.5s ease, opacity 0.5s ease;
     transform: translateY(100%);
     overflow-y: scroll;
     opacity: 0;
-    padding-top: 1rem;
+    padding-top: 1.5rem;
+    padding-bottom: 3rem;
     padding-inline: 1rem;
 }
 
