@@ -200,7 +200,7 @@ const auth = getAuth();
                     const adminData = adminDoc.data();                    // Check if the role is ADMIN
                     if (adminData.role === "ADMIN" || adminData.role === "MODERATOR" || adminData.role === "SUPER ADMIN") {
                         await signOut(auth);
-                        window.location.href = '/admin-login.html';
+                        window.location.href = './admin-login.html';
                     } else {
                         console.error("User is not an admin.");
                     }
@@ -250,7 +250,7 @@ const auth = getAuth();
                     const adminData = adminDoc.data();                    // Check if the role is ADMIN
                     if (adminData.role === "SUPER ADMIN" || adminData.role === "ADMIN" || adminData.role === "MODERATOR") {
                         await signOut(auth);
-                        window.location.href = '/admin-login.html';
+                        window.location.href = './admin-login.html';
                     } else {
                         console.error("User is not an admin.");
                     }
@@ -689,7 +689,7 @@ const auth = getAuth();
                     // Update password
                     await updatePassword(user, newPassword);
                     alert('Password changed successfully!');
-                    window.location.href = '/admin-login.html';
+                    window.location.href = './admin-login.html';
                 } catch (error) {
                     console.error('Error changing password:', error);
                 } finally {
@@ -763,9 +763,10 @@ const auth = getAuth();
                                 // Store the userId in sessionStorage or localStorage
                                 sessionStorage.setItem('selectedUserId', userId);
                                 // Redirect to the user details page
-                                window.location.href = '/admin-user-details.html';
+                                window.location.href = './admin-user-details.html';
                             } else {
                                 console.log("User not found.");
+                                window.location.href = './admin-student-list.html'
                             }
                         });
                     });
@@ -833,9 +834,10 @@ const auth = getAuth();
                                 // Store the userId in sessionStorage or localStorage
                                 sessionStorage.setItem('selectedUserId', userId);
                                 // Redirect to the user details page
-                                window.location.href = '/admin-user-details.html';
+                                window.location.href = './admin-user-details.html';
                             } else {
                                 console.log("User not found.");
+                                 window.location.href = './admin-student-list.html'
                             }
                         });
                     });
@@ -897,7 +899,6 @@ const auth = getAuth();
                     if (userRow) {
                         userRow.remove();
                     }
-
                 } catch (error) {
                     console.error("Error revoking approval: ", error);
                 }
@@ -1191,7 +1192,7 @@ const auth = getAuth();
                                     // Store the userId in sessionStorage or localStorage
                                     sessionStorage.setItem('selectedUserId', userId);
                                     // Redirect to the user details page
-                                    window.location.href = '/admin-user-details.html';
+                                    window.location.href = './admin-user-details.html';
                                 } else {
                                     console.log("User not found.");
                                 }
@@ -1272,7 +1273,7 @@ const auth = getAuth();
                                     // Store the userId in sessionStorage or localStorage
                                     sessionStorage.setItem('selectedUserId', userId);
                                     // Redirect to the user details page
-                                    window.location.href = '/admin-user-details.html';
+                                    window.location.href = './admin-user-details.html';
                                 } else {
                                     console.log("User not found.");
                                 }
@@ -1399,7 +1400,6 @@ const auth = getAuth();
                 console.error("Error searching for user by name: ", error);
             }
         }
-
 
         const searchBtn = document.querySelector('.searchBtn');
         searchBtn.addEventListener('click', (e) => {
@@ -1562,11 +1562,11 @@ const auth = getAuth();
                     showConfirmationModal(targetEmail);  // Show modal if the action is allowed
                 } else {
                     console.log('No user document found for this email.');
-                    window.location.href = '/admin-login.html';
+                    window.location.href = './admin-login.html';
                 }
             } else {
                 console.log('No user is logged in.');
-                window.location.href = '/admin-login.html';
+                window.location.href = './admin-login.html';
             }
         }
 
@@ -1602,11 +1602,11 @@ const auth = getAuth();
                     showEnableConfirmationModal(targetEmail);  // Show modal if the action is allowed
                 } else {
                     console.log('No user document found for this email.');
-                    window.location.href = '/admin-login.html';
+                    window.location.href = './admin-login.html';
                 }
             } else {
                 console.log('No user is logged in.');
-                window.location.href = '/admin-login.html';
+                window.location.href = './admin-login.html';
             }
         }
 
@@ -1758,7 +1758,7 @@ const auth = getAuth();
                     });
 
                     alert('Admin Added Successfully..Logging out to confirm the new Admin');
-                    window.location.href = '/admin-login.html';
+                    window.location.href = './admin-login.html';
 
                     // Update the UI directly by adding the new admin row
                     const newRow = `
@@ -2045,7 +2045,7 @@ const auth = getAuth();
                 
                 // Redirect to admin login page after 1 seconds
                 setTimeout(() => {
-                    window.location.href = '/admin-login.html';
+                    window.location.href = './admin-login.html';
                 }, 1000);
             } catch (error) {
                 console.error("Error sending password reset email:", error);
@@ -2089,7 +2089,7 @@ function checkAdminAuth() {
     onAuthStateChanged(auth, async (user) => {
         if (!user) {
             console.error("No admin user is signed in. Redirecting to admin login.");
-            window.location.href = '/admin-login.html';
+            window.location.href = './admin-login.html';
             return;
         }
 
@@ -2116,15 +2116,15 @@ function checkAdminAuth() {
                     }
                 } else {
                     alert("Unauthorized admin user. Redirecting to admin login.");
-                    window.location.href = '/admin-login.html';
+                    window.location.href = './admin-login.html';
                 }
             } else {
                 alert("Admin user not found. Redirecting to admin login.");
-                window.location.href = '/admin-login.html';
+                window.location.href = './admin-login.html';
             }
         } catch (error) {
             console.error("Error retrieving admin role:", error);
-            window.location.href = '/admin-login.html'; // Redirect in case of error
+            window.location.href = './admin-login.html'; // Redirect in case of error
         }
     });
 }
