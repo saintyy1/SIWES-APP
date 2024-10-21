@@ -213,7 +213,7 @@ const auth = getAuth();
                         // Check if the role is USER                     
                         if (userData.Role === "STUDENT") {
                             await signOut(auth);
-                            window.location.href = '/login.html';
+                            window.location.href = './';
                         } else {
                             console.error("User does not have a USER role.");
                         }
@@ -2011,7 +2011,7 @@ const auth = getAuth();
 
                 // Redirect to login page after 1 seconds
                 setTimeout(() => {
-                    window.location.href = '/login.html';
+                    window.location.href = './';
                 }, 1000);
             } catch (error) {
                 console.error("Error sending password reset email:", error);
@@ -2134,7 +2134,7 @@ function checkStudentAuth() {
     onAuthStateChanged(auth, async (user) => {
         if (!user) {
             console.error("No student user is signed in. Redirecting to student login.");
-            window.location.href = '/login.html';
+            window.location.href = './';
             return;
         }
 
@@ -2161,15 +2161,15 @@ function checkStudentAuth() {
                     }
                 } else {
                     console.error("Unauthorized student role.");
-                    window.location.href = '/login.html';
+                    window.location.href = './';
                 }
             } else {
                 alert("Student user not found.");
-                window.location.href = '/login.html';
+                window.location.href = './';
             }
         } catch (error) {
             console.error("Error retrieving student role:", error);
-            window.location.href = '/login.html'; // Redirect in case of error
+            window.location.href = './'; // Redirect in case of error
         }
     });
 }
