@@ -120,6 +120,7 @@ body {
 
 .task-button {
     display: none;
+    width: 45%;
 }
 
 .card-date-time {
@@ -129,10 +130,6 @@ body {
 .card-text {
     font-size: 14px;
     line-height: 1.4;
-}
-
-.task-button {
-    width: 110px;
 }
 
 @media (max-width:750px) {
