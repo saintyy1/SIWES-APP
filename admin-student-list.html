@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Siwes App</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/admin-student-list.css">
+</head>
+
+<body>
+  <!-- Navbar Section -->
+  <nav id="navbar"
+    class="nav sticky-top align-items-center bg-white w-100 flex-row px-4 py-2 justify-content-between shadow">
+    <a class="text-decoration-none fw-semibold fs-5 text-secondary">
+      <span>S.I.W.E.S</span>
+    </a>
+    <button type="button" class="btn d-block d-md-none nav-btn" data-bs-toggle="offcanvas" data-bs-target="#navmenu"
+      aria-controls="offcanvasExample">
+      <span>
+        <svg class="menu" width="22" height="22" viewBox="0 0 48 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M24 32H0V26.6667H24V32ZM48 18.6667H0V13.3333H48V18.6667ZM48 5.33333H24V0H48V5.33333Z"
+            fill="var(--text-color)" />
+        </svg>
+      </span>
+    </button>
+    <ul class="d-none d-md-flex navbar-nav flex-row gap-3 flex-fill justify-content-center" style="font-size: 16px">
+      <li class="nav-item">
+        <a class="nav-link fw-bold" aria-current="page" href="admin-student-list.html">Students</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" aria-current="page" href="new-admins.html">Admins</a>
+      </li>
+    </ul>
+
+    <div class="dropdown d-none d-md-block">
+      <img src="images/icons8-filled-circle-50.png" class="gender-icon">
+      <div class="dropdown-content">
+        <a href="admin-change-password.html" class="border-bottom">Change Password</a>
+        <a class="logout">Log out</a>
+      </div>
+    </div>
+
+    <!-- offcanvas -->
+    <div class="offcanvas offcanvas-end" data-bs-backdrop="static" tabindex="-1" id="navmenu"
+      aria-labelledby="offcanvasRightLabel">
+      <div class="offcanvas-header justify-content-end">
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item">
+            <a class="nav-link fw-bold" aria-current="page" href="admin-student-list.html">Students</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="new-admins.html">Admins</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="admin-change-password.html">Change Password</a>
+          </li>
+        </ul>
+        <button class="sec-logout mt-2">Log out</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Student List Section -->
+  <div class="container bg-white rounded-4 pt-3 pb-3 mt-4">
+    <h2 class="mb-0">Student List</h2>
+    <div class="d-flex student-list-header align-items-center mt-3 pb-1 justify-content-between">
+      <!-- Dropdown Button -->
+      <div>
+        <select name="studentDropdown" id="studentDropdown" class="rounded-2">
+          <option value="Active Students">All Students</option>
+          <option value="Disabled Students">Disabled Students</option>
+          <option value="Approved Students">Approved Students</option>
+        </select>
+      </div>
+
+      <form class="d-flex" role="search">
+        <input class="form-control me-2 searchBox" type="text" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success searchBtn" type="submit">Search</button>
+      </form>
+    </div>
+
+    <div class="table-responsive">
+      <table class="table table-striped table-hover">
+        <thead class="table-dark">
+          <tr>
+            <th>Name</th>
+            <th>Institution</th>
+            <th>Level</th>
+            <th class="d-none approved-by-header">Approved By</th>
+            <th class="d-none date-header">Approved Date</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody class="users-table-body">
+          <!-- Student data will be inserted here -->
+        </tbody>
+      </table>
+      <p class="table-text text-center">No Record found.</p>
+    </div>
+  </div>
+
+  <!-- Comfirmation Modal -->
+  <div class="modal" id="confirmModal" tabindex="-1" aria-labelledby="enrollLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Comfirmation</h5>
+        </div>
+        <div class="modal-body">
+          <p class="fw-semibold">Are you sure you want to disable this Student?</p>
+          <div class="d-flex gap-2 justify-content-end">
+            <button id="confirmYes" class="btn btn-danger">Yes</button>
+            <button id="confirmNo" class="btn btn-outline-secondary">No</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Success Modal -->
+  <div class="modal" id="successModal" tabindex="-1" aria-labelledby="enrollLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <p class="fw-semibold">Student successfully disabled!</p>
+        <button id="successOk" class="btn btn-primary">OK</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Comfirmation Modal -->
+  <div class="modal" id="confirmEnableModal" tabindex="-1" aria-labelledby="enrollLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Comfirmation</h5>
+        </div>
+        <div class="modal-body">
+          <p class="fw-semibold">Are you sure you want to enable this student?</p>
+          <div class="d-flex gap-2 justify-content-end">
+            <button id="confirmEnableYes" class="btn btn-danger">Yes</button>
+            <button id="confirmEnableNo" class="btn btn-outline-secondary">No</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Success Modal -->
+  <div class="modal" id="successEnableModal" tabindex="-1" aria-labelledby="enrollLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <p class="fw-semibold">Student Successfully Enabled!</p>
+        <button id="successEnableOk" class="btn btn-primary">OK</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Revoke Approved Student Modal -->
+  <div class="modal fade" id="userModal" tabindex="-1" aria-labelledby="userModalLabel" aria-hidden="true">
+    <div class="modal-dialog approve-modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="userModalLabel">Approved User Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="userDetailsForm">
+            <div class="mb-3">
+              <label for="userName" class="text-secondary">Name</label>
+              <input type="text" class="form-control fw-semibold" id="userName" readonly>
+            </div>
+            <div class="mb-3">
+              <label for="userInstitution" class="text-secondary">Institution</label>
+              <input type="text" class="form-control fw-semibold" id="userInstitution" readonly>
+            </div>
+            <div class="mb-3">
+              <label for="userLevel" class="text-secondary">Level</label>
+              <input type="text" class="form-control fw-semibold" id="userLevel" readonly>
+            </div>
+            <div class="mb-3">
+              <label for="approvedBy" class="text-secondary">Approved By</label>
+              <input type="text" class="form-control fw-semibold" id="approvedBy" readonly>
+            </div>
+            <div class="mb-3">
+              <label for="approvalDate" class="text-secondary">Approval Date</label>
+              <input type="text" class="form-control fw-semibold" id="approvalDate" readonly>
+            </div>
+            <div class="mb-3">
+              <label for="remarks" class="text-secondary">Remarks</label>
+              <textarea class="form-control fw-semibold" id="remarks" readonly></textarea>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" id="revokeBtn">Revoke</button>
+          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+    crossorigin="anonymous"></script>
+  <script type="module" src="js/main.js"></script>
+</body>
+
+</html>

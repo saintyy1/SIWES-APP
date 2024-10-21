@@ -1,0 +1,177 @@
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #F8F9FA;
+    padding-bottom: 1.5rem;
+}
+
+:root{
+    --offcanvas-width:70%;
+    --text-color: black;
+}
+
+/* Nav bar section */
+nav{
+    margin-inline: auto;
+    padding-block: 1.5rem;
+}
+
+.nav {
+    padding-inline: 100px !important;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+  
+.gender-icon {
+    width: 45px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown-avatar {
+    width: 38px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    width: 160px;
+    top: 2.5rem;
+    right: 0.5rem;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+color: black;
+padding: 12px 16px;
+text-decoration: none;
+display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
+
+.show {
+    display: block;
+}
+
+.offcanvas.offcanvas-end{
+    width:var(--offcanvas-width);
+}
+
+@media (max-width: 600px) {
+    .nav {
+        padding-inline: 1.5rem !important;
+    }
+}
+
+@media screen and (min-width: 375px) {
+    .offcanvas.offcanvas-end{
+        width: 250px;
+    }
+}
+.offcanvas-body .nav-link {
+    padding-block: 0;
+}
+
+.sec-logout {
+    padding-inline: 1.5rem;
+    padding-block: 0.2rem;
+    background-color: gray;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+/* Admin list section */
+#successOk, #successEnableOk {
+    float: right;
+}
+
+#confirmModal, #confirmEnableModal {
+    display: none;
+    padding: 20px;
+    border: 1px solid #ccc;
+}
+
+#successModal .modal-content, #successEnableModal .modal-content  {
+    padding: 1rem;
+}
+
+#Role {
+    width: 100%;
+    height: 37.3px;
+}
+
+select {
+    width: 100%;
+    height: 37.3px;
+}
+
+#adminDropdown {
+    cursor: pointer;
+    border-color: lightgray;
+}
+
+.disable-icon {
+    width: 13px;
+    display: none;
+    cursor: pointer;
+}
+
+.enable-icon {
+    width: 13px;
+    display: none;
+    cursor: pointer;
+}
+
+#timezone {
+    width: 100%;
+    height: 37.3px;
+}
+
+#signInBtn {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the spinner */
+    display: none; /* Initially hidden */
+}
+
+.signInLoader {
+    width: 25px;
+    height: 25px;
+}
+
+/* Show spinner and hide text when loading */
+#signInBtn.loading {
+    color: transparent; /* Hide button text when loading */
+}
+
+/* Display spinner when loading */
+#signInBtn.loading .spinner {
+    display: block;
+}
+
+@media (max-width: 576px) {
+    .admin-list-header {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+}
+

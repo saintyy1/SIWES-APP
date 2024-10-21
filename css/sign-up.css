@@ -1,0 +1,141 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: lightblue;
+    padding-inline: 1.5rem;
+    padding-block: 1.5rem;
+}
+
+main {
+    border-radius: 10px;
+    width: 1024px;
+    height: 100%;
+}
+
+.sign-up-content-container {
+    padding: 3rem;
+    background-color:  #F8F9FA;
+    width: 50%;
+}
+
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+select {
+    height: 37.33px;
+}
+
+.img-parent {
+    width:50%;
+}
+
+img {
+    height : 16rem;
+    width: 16rem;
+}
+
+.sign-up-content {
+    width: 300px;
+    height: 100%;
+}
+
+form {
+    overflow-y: scroll;
+}
+
+#signUpBtn {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the spinner */
+    display: none; /* Initially hidden */
+}
+
+.signUpLoader {
+    width: 25px;
+    height: 25px;
+}
+
+/* Show spinner and hide text when loading */
+#signUpBtn.loading {
+    color: transparent; /* Hide button text when loading */
+}
+
+/* Display spinner when loading */
+#signUpBtn.loading .spinner {
+    display: block;
+}
+
+input {
+    width: 300px;
+}
+
+    
+@media (max-width: 900px) {
+    .img-parent {
+        width:40%;
+    }
+
+    .logo {
+        max-width: 225px;
+    }
+
+    .sign-up-content-container {
+        width: 60%;
+    }
+
+    @media (max-width: 790px) {
+        .img-parent {
+            padding: 1rem !important;
+        }
+    }
+
+    @media (max-width:749px) {
+        body {
+            padding-inline: 0rem;
+            padding-block: 0rem;
+        }
+
+        .img-parent {
+            display: none !important;
+        }
+
+        .sign-up-content-container {
+            width: 100%;
+        }
+
+        .sign-up-content {
+            width: 85%;
+        }
+
+        input {
+            width: 100%;
+        }
+    }   
+
+    @media (max-width: 576px) {
+        .sign-up-content {
+            width: 100%;
+        }
+    }
+
+    @media (max-width: 425px) {
+        .sign-up-content-container {
+            padding-inline: 1rem;
+            background-color:  #F8F9FA;
+        }
+    }
+
+}

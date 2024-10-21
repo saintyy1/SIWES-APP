@@ -1,0 +1,116 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: lightblue;
+    padding-inline: 1.5rem;
+    padding-block: 1.5rem;
+}
+
+main {
+    border-radius: 10px;
+    width: 1024px;
+    height: 100%;
+}
+
+.log-in-container {
+    padding: 3rem;
+    background-color: #F8F9FA;
+    width: 50%;
+}
+
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+.img-parent {
+    width:50%;
+}
+
+img {
+    height : 16rem;
+    width: 16rem;
+}
+
+#signInBtn {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the spinner */
+    display: none; /* Initially hidden */
+}
+
+.signInLoader {
+    width: 25px;
+    height: 25px;
+}
+
+/* Show spinner and hide text when loading */
+#signInBtn.loading {
+    color: transparent; /* Hide button text when loading */
+}
+
+/* Display spinner when loading */
+#signInBtn.loading .spinner {
+    display: block;
+}
+
+@media (max-width: 900px) {
+    .img-parent {
+        width:40%;
+    }
+
+    .logo {
+        max-width: 225px;
+    }
+
+    .log-in-container {
+        width: 60%;
+    }
+
+    @media (max-width: 790px) {
+        .img-parent {
+            padding: 1rem !important;
+        }
+    }
+
+    @media (max-width:749px) {
+        body {
+            padding-inline: 0rem;
+            padding-block: 0rem;
+        }
+
+        .img-parent {
+            display: none !important;
+        }
+
+        .log-in-container {
+            width: 100%;
+        }
+    }   
+
+    @media (max-width: 547px) {
+        .log-in-container {
+            padding: 1.5rem;
+        }
+    }
+
+    @media (max-width: 375px) {
+        .log-in-container {
+            padding-inline: 1rem;
+            background-color:  #F8F9FA;
+        }
+    }
+
+}

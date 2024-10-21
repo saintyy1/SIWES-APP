@@ -1,0 +1,149 @@
+:root{
+    --offcanvas-width:70%;
+    --background-color:#F8F9FA;
+    --text-color: black;
+}
+
+/* Splash */
+.splash {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 191.59px);
+    display: grid;
+    place-content: center;
+    transition: transform 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.splash img {
+    width: 90px;
+}
+
+/* Nav bar section */
+nav{
+    margin-inline: auto;
+    padding-block: 1.5rem;
+}
+
+.nav {
+    padding-inline: 100px !important;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+  
+.gender-icon {
+    width: 45px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    width: 160px;
+    top: 2.5rem;
+    right: 0.5rem;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
+
+.show {
+    display: block;
+}
+
+.offcanvas.offcanvas-end{
+    width:var(--offcanvas-width);
+}
+
+.sec-logout {
+    padding-inline: 1.5rem;
+    padding-block: 0.2rem;
+    background-color: gray;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+@media (max-width: 600px) {
+    .nav {
+        padding-inline: 1.5rem !important;
+    }
+}
+
+@media screen and (min-width: 375px) {
+    .offcanvas.offcanvas-end{
+        width: 250px;
+    }
+}
+.offcanvas-body .nav-link {
+    padding-block: 0;
+}
+
+body {
+    height: 100vh;
+    background-color: var(--background-color);
+}
+
+.task-wrapper {
+    padding-bottom: 1.5rem;
+    max-width: 600px;
+    margin-inline: auto;
+    position: relative;
+}
+
+.approve-icon {
+    width: 40px;
+    display: none;
+}
+
+.task-content {
+    max-width: 600px;
+    margin-inline: auto;
+}
+
+.task-button {
+    display: none;
+}
+
+.card-date-time {
+    font-size: 12px;
+}
+
+.card-text {
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.task-button {
+    width: 110px;
+}
+
+@media (max-width:750px) {
+    .task-content, .task-wrapper {
+        width: 500px;
+    }
+
+    @media (max-width:545px) {
+        .task-content, .task-wrapper {
+            padding-inline: 1.2rem;
+            width: 100%;
+        }
+    }
+}
