@@ -193,9 +193,14 @@ span {
     display: none;
 }
 
+.taskHeader {
+    width: 800px;
+    margin-inline: auto;
+    align-items: baseline;
+}
+
 .close-button {
     float: right;
-    margin-bottom: 0.5rem;
     background: none;
     border: none;
     font-size: 20px;
@@ -276,7 +281,7 @@ span {
         max-width: 750px; /* Default max-width for large screens */
     }
 
-    .task-content {
+    .taskHeader {
         max-width: 750px;
     }
 
@@ -295,7 +300,7 @@ span {
     }
 
     
-    .task-content {
+    .taskHeader {
         max-width: 100%;
     }
 
