@@ -66,7 +66,7 @@ const auth = getAuth();
                     await sendEmailVerification(user);
                     // Email verification sent!
                     alert('Registration successful; A verification link has been sent to your mail.');
-                    window.location.href = '/login.html';
+                    window.location.href = '/';
                 })
                 .catch((err) => {
                     console.log(err.message);
@@ -108,7 +108,7 @@ const auth = getAuth();
                     const userData = userDocSnap.data();
                     if (userData.isActive === "true") {
                         await signInWithEmailAndPassword(auth, userData.Email, password);
-                        window.location.href = '/task-page.html';
+                        window.location.href = './task-page.html';
                     } else {
                         // if the user is not active
                         alert("User has been disabled!!");
