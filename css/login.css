@@ -89,6 +89,7 @@ img {
         body {
             padding-inline: 0rem;
             padding-block: 0rem;
+            background-color: #F8F9FA;
         }
 
         .img-parent {
@@ -109,8 +110,6 @@ img {
     @media (max-width: 375px) {
         .log-in-container {
             padding-inline: 1rem;
-            background-color:  #F8F9FA;
         }
     }
-
 }

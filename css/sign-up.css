@@ -106,6 +106,7 @@ input {
         body {
             padding-inline: 0rem;
             padding-block: 0rem;
+            background-color:  #F8F9FA;
         }
 
         .img-parent {
@@ -134,7 +135,6 @@ input {
     @media (max-width: 425px) {
         .sign-up-content-container {
             padding-inline: 1rem;
-            background-color:  #F8F9FA;
         }
     }
 
