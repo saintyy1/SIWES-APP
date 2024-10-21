@@ -66,7 +66,7 @@ const auth = getAuth();
                     await sendEmailVerification(user);
                     // Email verification sent!
                     alert('Registration successful; A verification link has been sent to your mail.');
-                    window.location.href = '/';
+                    window.location.href = './';
                 })
                 .catch((err) => {
                     console.log(err.message);
@@ -263,7 +263,7 @@ const auth = getAuth();
                         // Check if the role is USER                     
                         if (userData.Role === "STUDENT") {
                             await signOut(auth);
-                            window.location.href = '/';
+                            window.location.href = './';
                         } else {
                             console.error("User does not have a USER role.");
                         }
