@@ -23,6 +23,10 @@ nav{
     padding-inline: 100px !important;
 }
 
+.navbar-nav {
+    gap: 0.5rem;
+}
+
 .dropdown {
     position: relative;
     display: inline-block;
