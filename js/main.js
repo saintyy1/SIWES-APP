@@ -2115,11 +2115,9 @@ function checkAdminAuth() {
                         genderIcon.src = "images/woman.png";
                     }
                 } else {
-                    alert("Unauthorized admin user. Redirecting to admin login.");
                     window.location.href = './admin-login.html';
                 }
             } else {
-                alert("Admin user not found. Redirecting to admin login.");
                 window.location.href = './admin-login.html';
             }
         } catch (error) {
@@ -2164,7 +2162,6 @@ function checkStudentAuth() {
                     window.location.href = './';
                 }
             } else {
-                alert("Student user not found.");
                 window.location.href = './';
             }
         } catch (error) {

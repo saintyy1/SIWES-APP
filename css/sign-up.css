@@ -127,15 +127,22 @@ input {
     }   
 
     @media (max-width: 576px) {
+        body {
+            height: 100%;
+            padding-inline: 1.2rem;
+            padding-block: 1rem;
+        }
+
         .sign-up-content {
             width: 100%;
         }
-    }
 
-    @media (max-width: 425px) {
         .sign-up-content-container {
-            padding-inline: 1rem;
+            padding: 0;
+        }
+
+        form {
+            overflow-y: hidden;
         }
     }
-
 }
