@@ -157,7 +157,7 @@ const auth = getAuth();
                     if (userData.isActive === "true") {
                         // Log in the admin
                         await signInWithEmailAndPassword(auth, email, password);
-                        window.location.href = '/admin-student-list.html';
+                        window.location.href = './admin-student-list.html';
                     } else {
                         alert('User has been disabled!!!');
                         adminLoginForm.reset();
@@ -367,7 +367,7 @@ const auth = getAuth();
             } else {
                 // If the user is not signed in, redirect to login page
                 console.error("No user is signed in.");
-                window.location.href = '/login.html';
+                window.location.href = './';
             }
         });
 
@@ -479,7 +479,7 @@ const auth = getAuth();
             } else {
                 // No user is signed in, redirect to login page
                 console.error("No user is signed in.");
-                window.location.href = '/login.html';
+                window.location.href = './';
             }
         });
 
@@ -581,7 +581,7 @@ const auth = getAuth();
                         console.log("User ID retrieved successfully:", userId);
                     } else {
                         console.error("No user ID found for this email.");
-                        window.location.href = '/login.html'
+                        window.location.href = './'
                     }
                 } catch (error) {
                     console.error("Error retrieving user ID:", error);
@@ -589,7 +589,7 @@ const auth = getAuth();
             } else {
                 // No user is signed in, redirect to login page
                 console.error("No user is signed in.");
-                window.location.href = '/login.html';
+                window.location.href = './';
             }
         });
     };
@@ -635,7 +635,7 @@ const auth = getAuth();
                     // Update password
                     await updatePassword(user, newPassword);
                     alert('Password changed successfully!');
-                    window.location.href = '/login.html';
+                    window.location.href = './';
                 } catch (error) {
                     console.error('Error changing password:', error);
                 } finally {
